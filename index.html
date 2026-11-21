@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toshkent tramvayi: 22 vagon, 1901–2016</title>
+<title>Toshkent tramvayi: 22 tur vagon, 1901–2016</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
@@ -113,7 +113,7 @@ footer ul{margin:.5em 0 0;padding-left:1.2em}
 </head>
 <body>
 <header>
-  <h1>Toshkent tramvayi: 22 vagon, 1901–2016</h1>
+  <h1>Toshkent tramvayi: 22 tur vagon, 1901–2016</h1>
   <p>Archemistry Urban</p>
 </header>
 
@@ -141,6 +141,7 @@ footer ul{margin:.5em 0 0;padding-left:1.2em}
         <ul>
           <li>D. Merzlov, «Ташкентскому трамваю 100 лет», mytashkent.uz, 2012.</li>
           <li>ru.wikipedia «Ташкентский трамвай»; en.wikipedia «Trams in Tashkent» va vagon turlari maqolalari (o'lchamlar).</li>
+          <li>«Большая трамвайная история. Четверть века», telegra.ph, 3 qism (1991–2016): 1991-yildan keyingi vagonlar, yillar va sonlar.</li>
           <li>TransPhoto (transphoto.org), uz-electro.narod.ru, pastvu.com, Wikimedia Commons: arxiv suratlari, modellar uchun asos.</li>
           <li>Tor iz kengligi bo'yicha manbalar farq qiladi: en.wikipedia 1000 mm, ru.wikipedia 960 mm. Keng izga (1524 mm) o'tish 1936-yildan boshlangan, 1968-yilda tugagan.</li>
           <li>3D modellar arxiv suratlari asosida tiklangan vizual rekonstruksiya, o'lchov chizmasi emas. Rang, raqam va yashirin tomonlar qisman taxmin. Ikkala konka Blender'da qo'lda qurilgan, qolganlari AI multiview (Tripo) bilan, o'lchamlari Blender'da to'g'rilangan.</li>
@@ -165,7 +166,7 @@ footer ul{margin:.5em 0 0;padding-left:1.2em}
       interaction-prompt="none" shadow-intensity="1" shadow-softness=".8" exposure="1.05"
       environment-image="neutral" camera-orbit="35deg 74deg 110%"
       alt="Tramvay vagonining aylanadigan 3D modeli"></model-viewer>
-    <div class="empty" id="empty">Bu vagonning 3D modeli yuklanmadi.</div>
+    <div class="empty" id="empty">Bu vagonning 3D modeli hali tayyorlanmagan.</div>
     <button class="nav prev" id="prev" aria-label="Oldingi vagon"><svg viewBox="0 0 20 20"><path d="M13 3 6 10l7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
     <button class="nav next" id="next" aria-label="Keyingi vagon"><svg viewBox="0 0 20 20"><path d="m7 3 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
     <p class="hint">Barmoq yoki sichqoncha bilan aylantiring</p>
@@ -222,12 +223,8 @@ const V=[
  story:["Toshkent tor izli tarmog'ining eng so'nggi vagonlaridan biri. Faqat bitta oq-qora surat topilgan."],
  city:"1968-yilda tor iz butunlay yopildi. Zilziladan keyingi qayta qurish bilan bir vaqtda shahar yagona keng izli tarmoqqa o'tdi.",
  note:"O'lcham de.wikipedia: 10 900 × 2 200 × 3 115 mm. Rang <b>taxmin</b>."},
-{id:"ktm2",s:"KTM-2",era:2,y:"1962",name:"KTM-2",maker:"UKVZ",years:"1962-yil fevralidan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI",L:13.6,Lt:true,
- story:["Ust-Katav zavodining ikkinchi avlod motorli vagoni, KTP-2 tirkamasi bilan yurgan."],
- city:"Keng iz tarmog'i kengaygan sari kattaroq vagonlar yangi turar joy massivlariga yetib bordi.",
- note:"Uzunlik va rang <b>taxmin</b>."},
-{id:"ktp2",s:"KTP-2",era:2,y:"1962",name:"KTP-2, tirkama",maker:"UKVZ",years:"1962-yildan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI",L:13.6,Lt:true,
- story:["KTM-2 ga ulanadigan motorsiz tirkama."],
+{id:"ktm2",s:"KTM-2 + KTP-2",era:2,y:"1962",name:"KTM-2 + KTP-2",maker:"UKVZ (Ust-Katav). Tramvay poyezdi: motorli vagon va tirkama",years:"1962-yil fevralidan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI",L:13.6,Lt:true,pair:true,
+ story:["Ust-Katav zavodining ikkinchi avlodi. Motorli KTM-2 va motorsiz KTP-2 tirkamasi bitta poyezd bo'lib yurgan: tirkama motorli vagonsiz harakatlana olmaydi."],
  city:"Motorli vagon va tirkama juftligi bir haydovchi bilan sig'imni ikki baravar oshirardi, bu 1960-yillar Toshkentining tez o'sishiga javob edi.",
  note:"Uzunlik va rang <b>taxmin</b>."},
 {id:"lm57",s:"LM-57",era:2,y:"1964",name:"LM-57",maker:"Leningrad, VARZ",years:"1964-yil oktyabridan",count:"aniq emas",gauge:"1524 mm",w:"2,55",h:"3,08",L:15.0,
@@ -237,39 +234,43 @@ const V=[
 {id:"rvz6",s:"RVZ-6M",era:2,y:"1965",name:"RVZ-6M",maker:"Riga vagon zavodi",years:"RVZ-6 1965-yil oxiridan, RVZ-6M 1974-yildan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI (pantograf ko'tarilgan)",L:15.0,Lt:true,
  story:["Rigada yasalgan vagonlar 1965-yil oxiridan kela boshladi va 1966-yilgi zilziladan keyin qayta qurilayotgan shaharda yurdi. Model keyingi RVZ-6M modifikatsiyasi bo'yicha. Muzey vagoni 2-depoda saqlangan."],
  city:"Qayta qurilayotgan shaharda yangi mikrorayonlarni markaz bilan bog'lagan asosiy vagonlardan biri.",
- note:"Suratlar oq-qora: pastki qism qizil deb olindi, <b>taxmin</b>. Uzunlik ~15 m, <b>taxmin</b>."},
+ note:"<b>Modelda xato bor:</b> unda 3 eshik bor, Toshkentdagi RVZ-6 vagonlari esa 2 eshikli bo'lgan. Model haqiqiy suratlar bo'yicha qayta tiklanadi. Rang va uzunlik <b>taxmin</b>."},
 {id:"lm68",s:"LM-68",era:2,y:"1970",name:"LM-68",maker:"Leningrad",years:"1970-yildan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI",L:15.0,Lt:true,
  story:["LM-57 ning keyingi avlodi, TransPhoto'da 9 ta surat."],
  city:"1970-yillarda tramvay hali metro bilan raqobatlashmagan: Toshkent metrosi 1977-yilda ochildi va tramvay uning atrofidagi tarmoqni to'ldirdi.",
  note:"O'lcham va rang <b>taxmin</b>."},
-{id:"ktm5",s:"KTM-5",era:2,y:"1976",name:"KTM-5 (KTM-5M3)",maker:"UKVZ",years:"1976-yildan",count:"dastlab 12 ta",gauge:"1524 mm",w:"2,6",h:"AI (~3,8)",L:15.0,Lt:true,
- story:["Sovet Ittifoqidagi eng ommaviy tramvaylardan biri. 1989-yilda Toshkent parkidagi 511 vagonning asosini KTM-5M3, RVZ-6 va Tatra T3 tashkil qilgan."],
+{id:"ktm5",s:"71-605",era:2,y:"1976",name:"71-605 (KTM-5M3)",maker:"UKVZ (Ust-Katav)",years:"1976–2009",count:"dastlab 12 ta",gauge:"1524 mm",w:"2,6",h:"AI (~3,8)",L:15.0,Lt:true,
+ story:["Sovet Ittifoqidagi eng ommaviy tramvaylardan biri. 1989-yilda Toshkent parkidagi 511 vagonning asosini 71-605, RVZ-6 va Tatra T3 tashkil qilgan. Oxirgi 71-605 vagonlari 2009-yilda hisobdan chiqarilgan."],
  city:"«Oltin davr»: tramvay shahar bo'ylab zich tarmoq bo'lib, kundalik harakatning katta qismini ko'tarardi.",
  note:"Tok olgich Blender'da qayta qurilgan. 1976-yilgi asl rang noma'lum; model keyingi ko'k-oq rangda."},
-{id:"t3su",s:"Tatra T3SU",era:2,y:"1983",name:"Tatra T3SU",maker:"ČKD Tatra (Chexoslovakiya)",years:"1983-yildan",count:"dastlab 10 ta",gauge:"1524 mm",w:"2,5",h:"3,05",L:14.0,
+{id:"t3su",s:"Tatra T3SU",era:2,y:"1983",name:"Tatra T3SU",maker:"ČKD Tatra (Chexoslovakiya)",years:"1983–2005",count:"dastlab 10 ta",gauge:"1524 mm",w:"2,5",h:"3,05",L:14.0,
  story:["Qizil-sariq Tatra Toshkent ko'chalarining eng taniqli obrazlaridan biri bo'ldi."],
  city:"Ravon yurish va yaxshi tezlanish tramvayni ko'p tarmoqli shaharda raqobatbardosh saqlardi.",
  note:"O'lcham en.wikipedia Tatra T3: kuzov 14 000 × 2 500 × 3 050 mm."},
-{id:"t6b5",s:"Tatra T6B5",era:3,y:"1993",name:"Tatra T6B5",maker:"ČKD Tatra",years:"1993–2000",count:"80 ta (Merzlov) yoki 90 ta (boshqa manba)",gauge:"1524 mm",w:"2,5",h:"3,145",L:15.3,
- story:["Mustaqillikning birinchi yillarida kelgan katta partiya. Oq-yashil rangda yurgan."],
- city:"Qiyin iqtisodiy yillarda ham tarmoq yangilandi: tramvay arzon ommaviy transport bo'lib qoldi.",
- note:"O'lcham en.wikipedia Tatra T6B5: 15 300 × 2 500 × 3 145 mm. Soni bo'yicha manbalar farq qiladi."},
-{id:"ktm8",s:"KTM-8",era:3,y:"1993",name:"KTM-8 (71-608)",maker:"UKVZ",years:"1993–2000",count:"51 ta",gauge:"1524 mm",w:"2,5",h:"3,09",L:15.21,
- story:["Havorang-oq rangdagi Ust-Katav vagoni, T6B5 bilan bir davrda kelgan."],
- city:"Ikki xil vagon bir vaqtda parkni yangiladi, tarmoq 2000-yillarga shu park bilan kirdi.",
- note:"O'lcham en.wikipedia 71-608: 15 210 mm, balandlik 3 090 mm."},
-{id:"ktm19",s:"KTM-19",era:3,y:"2007",name:"KTM-19 (71-619KT)",maker:"UKVZ",years:"2007–2008",count:"30 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.4,
- story:["Yashil-oq rangdagi so'nggi yirik sovet tipidagi partiya. Oxirgi yillarda T6B5 bilan birga yurgan."],
+{id:"ktm8",s:"71-608K",era:3,y:"1993",name:"71-608K (KTM-8K)",maker:"UKVZ (Ust-Katav)",years:"1993–1994-yillarda kelgan, 2008-yilgacha",count:"46 ta",gauge:"1524 mm",w:"2,5",h:"3,09",L:15.21,
+ story:["Mustaqillikning birinchi yillarida kelgan vagonlar, hammasi 3-depoga berilgan. Manbaga ko'ra, model muvaffaqiyatsiz chiqqan: bir qismi 2000-yillar boshidayoq hisobdan chiqarilgan, qolganlari 2008-yilda 3-marshrut bilan birga to'xtagan."],
+ city:"Qiyin iqtisodiy yillarda ham shahar tramvay parkini yangilashga harakat qildi.",
+ note:"O'lcham en.wikipedia 71-608: 15 210 mm, balandlik 3 090 mm. Rang <b>taxmin</b>."},
+{id:"t6b5",s:"Tatra T6B5",era:3,y:"1994",name:"Tatra T6B5",maker:"ČKD Tatra (Chexiya)",years:"1994–1998-yillarda kelgan",count:"90 ta",gauge:"1524 mm",w:"2,5",h:"3,145",L:15.3,
+ story:["Mustaqillik davridagi eng katta xarid: 1994–1998-yillarda 90 ta vagon sotib olingan. 2000-yillarda parkning asosini tashkil qilgan: 2006-yilda ishdagi 98 vagonning 88 tasi Tatra T6 edi."],
+ city:"Eski sovet vagonlari ishdan chiqqan sari tarmoq deyarli faqat shu vagonlarga tayanib qoldi. Yangi xaridlar to'xtagach, park qisqarishi bilan marshrutlar ham kamaydi.",
+ note:"O'lcham en.wikipedia Tatra T6B5: 15 300 × 2 500 × 3 145 mm."},
+{id:"ktm8km",s:"71-608KM",era:3,y:"1996",name:"71-608KM",maker:"UKVZ (Ust-Katav)",years:"1996–2009",count:"5 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.21,Lt:true,nomodel:true,
+ story:["71-608K ning modernizatsiya qilingan varianti. 1996-yilda 5 ta sotib olingan, manbaga ko'ra oldingi modeldan muvaffaqiyatliroq chiqqan. Oxirgilari 2009-yilda hisobdan chiqarilgan."],
+ city:"1997-yildan yangi vagon sotib olish to'xtadi: keyingi yangi tramvaylar faqat 2004-yilda keldi.",
+ note:"3D modeli hali tayyorlanmagan. Uzunlik 71-608K bo'yicha, <b>taxmin</b>."},
+{id:"spektr",s:"Spektr",era:3,y:"2004",name:"71-402 va 71-403 «Spektr»",maker:"UVZ (Uralvagonzavod)",years:"2004-yildan",count:"2 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.0,Lt:true,
+ story:["Olti yillik tanaffusdan keyin kelgan birinchi yangi tramvaylar. 2003-yilda 100 ta vagonga shartnoma tuzilgan, sinovdan keyin yana 58 ta olinishi aytilgan, lekin ular kelmagan. 2009-yilda ikkala vagon ham ishda edi."],
+ city:"Katta shartnomalar qog'ozda qoldi, tarmoq esa qisqarishda davom etdi: 2003-yilda marshrutlar soni 12 taga tushgan edi.",
+ note:"71-402 va 71-403 bir-biridan farq qiladigan ikki xil vagon. Model hozircha bittasi bo'yicha, ikkinchisi haqiqiy suratlar bo'yicha qo'shiladi. O'lcham <b>taxmin</b>."},
+{id:"ktm19",s:"71-619KT",era:3,y:"2007",name:"71-619KT (KTM-19KT)",maker:"UKVZ (Ust-Katav)",years:"2007-yil sentyabri – 2008-yil iyuni",count:"30 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.4,
+ story:["2006-yilda 60 ta vagonga shartnoma tuzilgan, keyin u 30 taga qisqartirilgan. Birinchi vagonlar 2-depoga kelgan."],
  city:"Yangi vagonlar kelgan bo'lsa-da, 2000-yillar oxirida tarmoq qisqara boshladi, liniyalar birin-ketin yopildi.",
  note:"Uzunlik en.wikipedia 71-619: 15 400 mm."},
-{id:"vario",s:"Vario LF",era:3,y:"2011",name:"Vario LF",maker:"Pragoimex (Chexiya)",years:"2011–2012",count:"20 ta rejada, 14 tasi hujjatlashgan",gauge:"1524 mm",w:"2,5",h:"AI",L:15.1,Lt:true,
- story:["Toshkentga kelgan past polli qismli zamonaviy tramvay. Keyin bir qismi Samarqandga o'tkazildi."],
- city:"Past pol aravacha, keksa va nogironligi bor yo'lovchiga to'xtashda zinasiz chiqish imkonini beradi. Bu zamonaviy ochiq shahar transportining asosiy talabi.",
- note:"Soni <b>tekshirilmoqda</b>. O'lcham <b>taxmin</b>."},
-{id:"spektr",s:"Spektr",era:3,y:"20xx",name:"Spektr (71-402)",maker:"UKVZ",years:"kelgan yili tekshirilmoqda",count:"1 + 1 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.0,Lt:true,
- story:["Toshkentga ikkita (71-402 va 71-403) keltirilgan. 2016-yilda Toshkent tramvayining oxirgi reysi bo'ldi."],
- city:"Toshkent tramvayi 115 yil yashadi. Uning yo'qolishi bilan shahar yerusti relsli transportdan va unga bog'langan ko'chalar hayotidan ayrildi.",
- note:"Kelgan yili va o'lcham <b>taxmin</b>."}
+{id:"vario",s:"Vario LF.S",era:3,y:"2011",name:"Vario LF.S",maker:"Pragoimex (Chexiya)",years:"2011-yil avgusti – 2012-yil sentyabri",count:"20 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.1,Lt:true,
+ story:["Toshkentga kelgan past polli zamonaviy tramvay. Birinchi ikkita vagon 2011-yil avgustida, oxirgi oltitasi 2012-yil sentyabrida kelgan. Tramvay yopilgach, vagonlar Samarqandga berilishi belgilangan."],
+ city:"Past pol aravacha, keksa va nogironligi bor yo'lovchiga to'xtashda zinasiz chiqish imkonini beradi. Lekin 2016-yil 2-mayda, oxirgi 17-marshrut va 2-depo yopilishi bilan Toshkent tramvayi to'xtadi.",
+ note:"<b>Modelda xato bor:</b> unda 2 eshik bor, Toshkentdagi Vario LF.S esa 3 eshikli bo'lgan va ikki xil turda kelgan. Model haqiqiy suratlar bo'yicha qayta tiklanadi."},
 ];
 const MODELS={};
 const MAXL=15.4;
@@ -308,7 +309,7 @@ function show(i,fromHash){
   $("f-gauge").textContent=v.gauge;
   $("f-wh").textContent=`${v.w} × ${v.h} m`;
   $("lenbar").style.width=(v.L/MAXL*100)+"%";
-  $("lentext").textContent=`Uzunligi ${String(v.L).replace(".",",")} m${v.Lt?" (taxmin)":""}. Shkala: eng uzun vagon, 15,4 m.`;
+  $("lentext").textContent=`${v.pair?"Har bir vagon uzunligi":"Uzunligi"} ${String(v.L).replace(".",",")} m${v.Lt?" (taxmin)":""}. Shkala: eng uzun vagon, 15,4 m.`;
   $("story").innerHTML=v.story.map(p=>`<p>${p}</p>`).join("");
   $("city").textContent=v.city;
   $("note").innerHTML=v.note;
@@ -318,11 +319,10 @@ function show(i,fromHash){
   const line=track.parentElement,st=stops[cur];
   line.scrollTo({left:st.offsetLeft-line.clientWidth/2+st.offsetWidth/2,behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"});
   document.querySelector(".info").scrollTop=0;
-  stage.classList.remove("nomodel");
-  mv.src=MODELS[v.id]||`models/${v.id}.glb`;
+  if(v.nomodel){stage.classList.add("nomodel");mv.removeAttribute("src");}else{stage.classList.remove("nomodel");mv.src=MODELS[v.id]||`models/${v.id}.glb`;}
   mv.cameraOrbit="35deg 74deg 110%";
   // keyingi modelni oldindan yuklab qo'yish
-  const nx=V[(cur+1)%V.length];try{fetch(MODELS[nx.id]||`models/${nx.id}.glb`).catch(()=>{})}catch(e){}
+  const nx=V[(cur+1)%V.length];if(!nx.nomodel)try{fetch(MODELS[nx.id]||`models/${nx.id}.glb`).catch(()=>{})}catch(e){}
   if(!fromHash){try{history.replaceState(null,"","#"+v.id.replace(/_/g,"-"))}catch(e){}}
 }
 mv.addEventListener("error",()=>stage.classList.add("nomodel"));
