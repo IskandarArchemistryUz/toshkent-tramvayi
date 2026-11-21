@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toshkent tramvayi: 22 vagon, 1901–2016</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
+<script>self.ModelViewerElement={meshoptDecoderLocation:"https://cdn.jsdelivr.net/npm/meshoptimizer@0.22.0/meshopt_decoder.js"};</script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<style>
+:root{
+  --night:#1C2741;
+  --night-2:#24335A;
+  --ganch:#ECE4D2;
+  --ganch-dim:#A9AEC0;
+  --amber:#F2B233;
+  --e1:#F2B233;
+  --e2:#D2483A;
+  --e3:#2FB3A2;
+  --era:var(--e1);
+  --rail:#56607E;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--night);color:var(--ganch);font:16px/1.55 Onest,system-ui,sans-serif;
+  display:grid;grid-template-rows:auto minmax(0,1fr) auto;height:100vh;height:100dvh;overflow:hidden}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+header{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:18px clamp(16px,3vw,40px) 0}
+header h1{font:600 clamp(15px,1.6vw,19px)/1.2 Unbounded,sans-serif;margin:0;letter-spacing:.01em}
+header p{margin:0;color:var(--ganch-dim);font-size:14px}
+
+main{display:grid;grid-template-columns:minmax(320px,38%) 1fr;min-height:0}
+.info{padding:clamp(20px,3vw,44px) clamp(16px,3vw,40px);display:flex;flex-direction:column;gap:18px;max-width:600px;overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:var(--rail) transparent}
+.info>*{flex-shrink:0}
+.plate{align-self:flex-start;display:inline-flex;align-items:stretch;border:2px solid var(--era);border-radius:6px;overflow:hidden;transition:border-color .4s}
+.plate .no{background:var(--era);color:var(--night);font:800 15px/1 Unbounded,sans-serif;padding:8px 10px;display:flex;align-items:center;transition:background .4s}
+.plate .era{padding:8px 12px;font-size:14px;display:flex;align-items:center}
+.info h2{font:800 clamp(30px,4.2vw,56px)/1.02 Unbounded,sans-serif;margin:0;letter-spacing:-.01em}
+.maker{margin:-6px 0 0;color:var(--ganch-dim)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--night-2);border:1px solid var(--night-2);border-radius:8px;overflow:hidden;margin:0}
+.facts div{background:var(--night);padding:10px 12px}
+.facts dt{font-size:13px;color:var(--ganch-dim)}
+.facts dd{margin:2px 0 0;font-weight:500}
+.length{display:grid;gap:6px}
+.length .bar{height:10px;border-radius:5px;background:var(--night-2);position:relative;overflow:hidden}
+.length .bar i{position:absolute;inset:0 auto 0 0;background:var(--era);border-radius:5px;transition:width .6s cubic-bezier(.2,.7,.2,1),background .4s}
+.length small{color:var(--ganch-dim);font-size:13px}
+.story p{margin:0 0 .8em;max-width:62ch}
+.city{border-left:3px solid var(--era);padding:2px 0 2px 14px;transition:border-color .4s}
+.city h3{font:600 14px/1.3 Unbounded,sans-serif;margin:0 0 4px}
+.city p{margin:0;max-width:60ch}
+.note{font-size:13.5px;color:var(--ganch-dim);margin:0}
+.note b{color:var(--amber);font-weight:500}
+
+.stage{position:relative;min-height:0;display:grid;place-items:center;overflow:hidden}
+.year{position:absolute;inset:auto 0 12% 0;text-align:center;pointer-events:none;
+  font:800 clamp(110px,19vw,290px)/1 Unbounded,sans-serif;letter-spacing:-.03em;
+  color:transparent;-webkit-text-stroke:1.5px rgba(236,228,210,.16);transition:opacity .35s}
+.turntable{position:absolute;width:min(92%,760px);aspect-ratio:3.2/1;bottom:16%;left:50%;transform:translateX(-50%);pointer-events:none}
+model-viewer{position:relative;width:100%;height:100%;--poster-color:transparent;background:transparent}
+model-viewer::part(default-progress-bar){background:var(--era)}
+.empty{position:absolute;inset:0;display:none;place-items:center;text-align:center;color:var(--ganch-dim);font-size:14px;padding:20px}
+.stage.nomodel .empty{display:grid}
+.stage.nomodel model-viewer{visibility:hidden}
+.nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;
+  border:1.5px solid var(--rail);background:rgba(28,39,65,.7);cursor:pointer;display:grid;place-items:center;z-index:2}
+.nav:hover{border-color:var(--ganch)}
+.nav.prev{left:12px}.nav.next{right:12px}
+.nav svg{width:18px;height:18px}
+.hint{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:12.5px;color:var(--ganch-dim);pointer-events:none}
+
+.line{border-top:1px solid var(--night-2);padding:14px 0 18px;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--rail) transparent}
+.track{position:relative;display:flex;gap:4px;padding:28px clamp(16px,3vw,40px) 0;min-width:max-content}
+.track::before{content:"";position:absolute;left:0;right:0;top:64px;height:6px;
+  background:repeating-linear-gradient(90deg,var(--rail) 0 3px,transparent 3px 14px);opacity:.55}
+.track::after{content:"";position:absolute;left:0;right:0;top:64px;height:6px;border-top:1.5px solid var(--rail);border-bottom:1.5px solid var(--rail)}
+.eraband{position:absolute;top:0;font-size:12.5px;color:var(--ganch-dim);white-space:nowrap;padding-left:2px;border-left:2px solid}
+.stop{position:relative;z-index:1;width:76px;flex:none;background:none;border:0;padding:0 0 4px;cursor:pointer;text-align:center;display:grid;justify-items:center;gap:6px}
+.stop .y{font:600 12px/1 Unbounded,sans-serif;color:var(--ganch-dim)}
+.stop .dot{width:16px;height:16px;border-radius:50%;background:var(--night);border:2.5px solid var(--c);margin-top:3px;transition:transform .25s,background .25s}
+.stop .n{font-size:12.5px;line-height:1.2;color:var(--ganch-dim);max-width:72px}
+.stop:hover .n,.stop:hover .y{color:var(--ganch)}
+.stop[aria-current="true"] .dot{background:var(--c);transform:scale(1.35)}
+.stop[aria-current="true"] .n,.stop[aria-current="true"] .y{color:var(--ganch)}
+.stop[aria-current="true"] .n{font-weight:700}
+
+footer{font-size:12.5px;color:var(--ganch-dim);margin-top:auto;padding-top:8px}
+footer details summary{cursor:pointer}
+footer ul{margin:.5em 0 0;padding-left:1.2em}
+
+.swap{animation:swap .45s ease both}
+@keyframes swap{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+@media (max-width:860px){
+  body{display:flex;flex-direction:column;height:auto;overflow:visible}
+  header{order:-3;padding-bottom:6px}
+  main{grid-template-columns:1fr}
+  .stage{order:-1;height:48vh;min-height:300px}
+  .info{max-width:none;padding-top:8px;overflow:visible}
+  .line{position:sticky;top:0;background:var(--night);z-index:5;order:-2;padding:4px 0 10px}
+  .hint{bottom:2px}
+  .year{bottom:18%}
+}
+@media (prefers-reduced-motion:reduce){
+  .swap{animation:none}
+  .length .bar i{transition:none}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Toshkent tramvayi: 22 vagon, 1901–2016</h1>
+  <p>Archemistry Urban</p>
+</header>
+
+<main>
+  <section class="info" aria-live="polite">
+    <div class="plate"><span class="no" id="no">1</span><span class="era" id="era"></span></div>
+    <h2 id="name"></h2>
+    <p class="maker" id="maker"></p>
+    <dl class="facts">
+      <div><dt>Toshkentda</dt><dd id="f-years"></dd></div>
+      <div><dt>Soni</dt><dd id="f-count"></dd></div>
+      <div><dt>Iz kengligi</dt><dd id="f-gauge"></dd></div>
+      <div><dt>Eni × balandligi</dt><dd id="f-wh"></dd></div>
+    </dl>
+    <div class="length">
+      <div class="bar"><i id="lenbar"></i></div>
+      <small id="lentext"></small>
+    </div>
+    <div class="story" id="story"></div>
+    <div class="city"><h3>Shahar uchun nimani o'zgartirdi</h3><p id="city"></p></div>
+    <p class="note" id="note"></p>
+    <footer>
+      <details>
+        <summary>Manbalar va modellar haqida</summary>
+        <ul>
+          <li>D. Merzlov, «Ташкентскому трамваю 100 лет», mytashkent.uz, 2012.</li>
+          <li>ru.wikipedia «Ташкентский трамвай»; en.wikipedia «Trams in Tashkent» va vagon turlari maqolalari (o'lchamlar).</li>
+          <li>TransPhoto (transphoto.org), uz-electro.narod.ru, pastvu.com, Wikimedia Commons: arxiv suratlari, modellar uchun asos.</li>
+          <li>Tor iz kengligi bo'yicha manbalar farq qiladi: en.wikipedia 1000 mm, ru.wikipedia 960 mm. Keng izga (1524 mm) o'tish 1936-yildan boshlangan, 1968-yilda tugagan.</li>
+          <li>3D modellar arxiv suratlari asosida tiklangan vizual rekonstruksiya, o'lchov chizmasi emas. Rang, raqam va yashirin tomonlar qisman taxmin. Ikkala konka Blender'da qo'lda qurilgan, qolganlari AI multiview (Tripo) bilan, o'lchamlari Blender'da to'g'rilangan.</li>
+        </ul>
+      </details>
+    </footer>
+  </section>
+
+  <section class="stage" id="stage" aria-label="Vagonning 3D modeli">
+    <div class="year" id="year" aria-hidden="true"></div>
+    <svg class="turntable" viewBox="0 0 640 200" aria-hidden="true">
+      <ellipse cx="320" cy="100" rx="316" ry="96" fill="none" stroke="#56607E" stroke-width="1.5" opacity=".7"/>
+      <ellipse cx="320" cy="100" rx="296" ry="88" fill="#24335A" opacity=".55"/>
+      <g stroke="#56607E" stroke-width="3" opacity=".8">
+        <line x1="40" y1="92" x2="600" y2="92"/><line x1="40" y1="108" x2="600" y2="108"/>
+      </g>
+      <g stroke="#56607E" stroke-width="5" opacity=".45">
+        <line x1="70" y1="86" x2="70" y2="114"/><line x1="120" y1="86" x2="120" y2="114"/><line x1="170" y1="86" x2="170" y2="114"/><line x1="220" y1="86" x2="220" y2="114"/><line x1="270" y1="86" x2="270" y2="114"/><line x1="320" y1="86" x2="320" y2="114"/><line x1="370" y1="86" x2="370" y2="114"/><line x1="420" y1="86" x2="420" y2="114"/><line x1="470" y1="86" x2="470" y2="114"/><line x1="520" y1="86" x2="520" y2="114"/><line x1="570" y1="86" x2="570" y2="114"/>
+      </g>
+    </svg>
+    <model-viewer id="mv" camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="18deg"
+      interaction-prompt="none" shadow-intensity="1" shadow-softness=".8" exposure="1.05"
+      environment-image="neutral" camera-orbit="35deg 74deg 110%"
+      alt="Tramvay vagonining aylanadigan 3D modeli"></model-viewer>
+    <div class="empty" id="empty">Bu vagonning 3D modeli yuklanmadi.</div>
+    <button class="nav prev" id="prev" aria-label="Oldingi vagon"><svg viewBox="0 0 20 20"><path d="M13 3 6 10l7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+    <button class="nav next" id="next" aria-label="Keyingi vagon"><svg viewBox="0 0 20 20"><path d="m7 3 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+    <p class="hint">Barmoq yoki sichqoncha bilan aylantiring</p>
+  </section>
+</main>
+
+<nav class="line" aria-label="Vagonlar xronologiyasi"><div class="track" id="track"></div></nav>
+
+<script>
+const ERAS={
+  1:{name:"Rossiya imperiyasi, 1901–1917",c:"var(--e1)"},
+  2:{name:"Sovet davri, 1917–1991",c:"var(--e2)"},
+  3:{name:"Mustaqillik, 1991–2016",c:"var(--e3)"}
+};
+const TOR="tor (1000 yoki 960 mm)";
+const V=[
+{id:"konka_yozgi",s:"Konka, yozgi",era:1,y:"1901",name:"Konka, yozgi vagon",maker:"Kamenskiy zavodi, Yekaterinoslav guberniyasi (Merzlov)",years:"1901–1912",count:"1912-yilda 30 vagon va 230 ot",gauge:TOR,w:"2,0",h:"2,85",L:6.4,Lt:true,
+ story:["Toshkentning birinchi relsli jamoat transporti ot tortadigan konka edi. Ochiq yozgi vagonda ko'ndalang skameykalar, yon tomonida zinapoya taxtasi bo'lgan, yo'lovchi to'g'ridan-to'g'ri ko'chadan chiqib-tushgan."],
+ city:"Konka vokzalni shahar markazi bilan bog'ladi va yangi shahar ko'chalarida birinchi marta jadval bo'yicha yuradigan transport paydo bo'ldi. Ochiq vagon issiq iqlimga moslangan, lekin ot tezligi shaharni piyoda masofadan uzoqqa cho'zolmadi.",
+ note:"Model Blender'da qo'lda qurilgan. O'lcham va rang (to'q yashil va krem) <b>taxmin</b>."},
+{id:"konka_imperial",s:"Konka imperial",era:1,y:"1903",name:"Konka, ikki qavatli «imperial»",maker:"Kamenskiy zavodi (taxmin)",years:"1903-yilgi suratda bor",count:"aniq emas",gauge:TOR,w:"2,0",h:"~3,9 (taxmin)",L:6.1,Lt:true,
+ story:["1903-yilgi Romanovskiy ko'chasidagi suratda tomida yo'lovchilar o'tiradigan ikki qavatli konka ko'rinadi. Merzlov 1903-yilgi liniyada 1- va 2-klass vagonlar bo'lganini yozadi."],
+ city:"Tom ustidagi o'rindiqlar bitta ot tortadigan vagonga ko'proq odam sig'dirishning arzon yo'li edi. Klasslarga bo'linish esa shahar ijtimoiy tabaqalanishining transportdagi aksi.",
+ note:"Suratlar xira: zina shakli, tomdagi skameyka va derazalar soni <b>taxmin</b>."},
+{id:"ragheno_motor",s:"Ragheno",era:1,y:"1912",name:"«Belgiya tramvayi», motorli vagon",maker:"Usines Ragheno, Mexelen (Belgiya), 1911",years:"1912–1920-yillar",count:"80 ta buyurtma; 1916-yilda 50 motorli",gauge:TOR,w:"1,89",h:"3,2",L:8.3,
+ story:["1912-yilda Toshkentda elektr tramvay ishga tushdi. Vagonlar Belgiyaning Ragheno zavodidan keltirildi, model 1911-yilgi zavod chizmasi va TransPhoto suratlari asosida tiklandi.","Muzeydagi «Belgiya tramvayi» keyin yasalgan nusxa, original vagonning o'lchamlari undan olinmaydi."],
+ city:"Elektr tortish otni almashtirdi: tezlik oshdi, liniyalar uzaydi, shahar chegarasi piyoda masofadan tashqariga chiqa boshladi. Toshkentning yangi va eski qismlari orasidagi bog'liqlik kundalik holga aylandi.",
+ note:"O'lcham 1911-yilgi zavod chizmasidan."},
+{id:"ragheno_tirkama",s:"Ragheno tirkama",era:1,y:"1912",name:"Belgiya davri tirkama vagoni",maker:"Ragheno (taxmin)",years:"1912–1933",count:"1916-yilda 25 ta, 1924-yilda 20 ta",gauge:TOR,w:"2,0",h:"2,87",L:8.3,Lt:true,
+ story:["Motorsiz vagon motorli vagonga ulanib yurgan. Model «Сквер. Вагонъ трамвая» otkritkasi va №27 vagon tirkama bilan tushgan surat asosida tiklandi."],
+ city:"Tirkama qo'shimcha motorsiz sig'im berdi: bitta haydovchi va bitta motor bilan ikki baravar yo'lovchi. Bu avjli soatlardagi oqimga arzon javob edi.",
+ note:"Uzunlik motorli vagon bilan bir xil deb olindi, <b>taxmin</b>. Tirkama raqami manbada yo'q."},
+{id:"kh",s:"Kh",era:2,y:"1931",name:"Kh, motorli vagon",maker:"Putilov va Mitishchi zavodlari («Gomza» seriyasi)",years:"1931–1932-yildan",count:"park 150 vagonga yetgan",gauge:TOR,w:"2,19",h:"3,84 (shtanga bilan)",L:10.27,
+ story:["Sovet sanoatlashtirish yillarida kelgan birinchi ommaviy seriya. Qizil-krem rangli surat saqlangan, model shu suratlar asosida.","TransPhoto'da Kh №76 vagoni 4-marshrutda, Dizelnaya ko'chasida tushgan."],
+ city:"Yangi zavodlar va ishchi posyolkalari tramvay liniyalari bo'ylab o'sdi. Tramvay mehnat joyi va uyni bog'laydigan asosiy vositaga aylandi.",
+ note:"Uzunlik en.wikipedia «Kh (tramcar)»: 10 270 mm. U yerdagi 2 464 mm kenglik keng iz uchun; model torroq."},
+{id:"m",s:"M tirkama",era:2,y:"1931",name:"M, tirkama vagon",maker:"Mitishchi zavodi («Gomza» seriyasi)",years:"1931–1932-yildan",count:"aniq emas",gauge:TOR,w:"AI",h:"AI",L:10.3,Lt:true,
+ story:["Kh motorli vagoniga juft bo'lib yurgan tirkama. Model rangli Kh/M surati asosida."],
+ city:"Kh + M juftligi 1930-yillardagi aholining keskin o'sishiga mos sig'im berdi.",
+ note:"Uzunlik Kh bo'yicha, <b>taxmin</b>."},
+{id:"ktm1",s:"KTM-1",era:2,y:"1948",name:"KTM-1",maker:"UKVZ (Ust-Katav)",years:"1948-yildan",count:"1948-yilda 6 ta yangi KTM",gauge:"1524 mm (tekshirilmoqda)",w:"2,6",h:"3,06",L:13.5,Lt:true,
+ story:["Urushdan keyingi birinchi to'rt o'qli vagon. Zavodda faqat 1524 mm iz uchun chiqarilgan, 1936-yildan Toshkentda keng iz bo'lgani uchun keng izda yurgan bo'lishi ehtimoli yuqori."],
+ city:"1936-yildan uchinchi rels bilan keng izga o'tish boshlandi: shahar bir vaqtning o'zida ikki tizimni yuritdi, katta vagonlar uchun yo'l ochildi.",
+ note:"Balandlik en.wikipedia KTM/KTP-1: 3 060 mm. Toshkentdagi izi manbada «?». Uzunlik va rang <b>taxmin</b>."},
+{id:"lowa_et54",s:"LOWA ET54",era:2,y:"195x",name:"LOWA ET54",maker:"LOWA (GDR)",years:"1950-yillar (tekshirilmoqda)",count:"TransPhoto'da 8 vagon",gauge:"tor (taxmin)",w:"2,2",h:"AI",L:10.8,Lt:true,
+ story:["Sharqiy Germaniyadan kelgan ikki o'qli motorli vagon. Birinchi ro'yxatda yo'q edi, TransPhoto orqali topildi. Rangli surat qizil-krem rangni ko'rsatadi."],
+ city:"Tor izli liniyalar hali ishlab turgan, ularni yangilash uchun GDR vagonlari olindi.",
+ note:"Kelgan yili va izi <b>tekshirilmoqda</b>."},
+{id:"lowa_eb54",s:"LOWA EB54",era:2,y:"195x",name:"LOWA EB54, tirkama",maker:"LOWA (GDR)",years:"1950-yillar (tekshirilmoqda)",count:"TransPhoto'da 9 vagon",gauge:"tor (taxmin)",w:"2,2",h:"AI",L:10.8,Lt:true,
+ story:["ET54 ga ulanadigan tirkama vagon."],
+ city:"Motorli va tirkama juftligi tor izli tarmoqning so'nggi o'n yilligida ham asosiy sxema bo'lib qoldi.",
+ note:"Kelgan yili va izi <b>tekshirilmoqda</b>."},
+{id:"gotha_t57",s:"Gotha T57",era:2,y:"1956",name:"Gotha T57",maker:"Gotha (GDR)",years:"1956–1968",count:"1956-yilda 6 ta, 1958-yilda yana 6 ta",gauge:TOR,w:"2,2",h:"3,115",L:10.9,
+ story:["Toshkent tor izli tarmog'ining eng so'nggi vagonlaridan biri. Faqat bitta oq-qora surat topilgan."],
+ city:"1968-yilda tor iz butunlay yopildi. Zilziladan keyingi qayta qurish bilan bir vaqtda shahar yagona keng izli tarmoqqa o'tdi.",
+ note:"O'lcham de.wikipedia: 10 900 × 2 200 × 3 115 mm. Rang <b>taxmin</b>."},
+{id:"ktm2",s:"KTM-2",era:2,y:"1962",name:"KTM-2",maker:"UKVZ",years:"1962-yil fevralidan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI",L:13.6,Lt:true,
+ story:["Ust-Katav zavodining ikkinchi avlod motorli vagoni, KTP-2 tirkamasi bilan yurgan."],
+ city:"Keng iz tarmog'i kengaygan sari kattaroq vagonlar yangi turar joy massivlariga yetib bordi.",
+ note:"Uzunlik va rang <b>taxmin</b>."},
+{id:"ktp2",s:"KTP-2",era:2,y:"1962",name:"KTP-2, tirkama",maker:"UKVZ",years:"1962-yildan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI",L:13.6,Lt:true,
+ story:["KTM-2 ga ulanadigan motorsiz tirkama."],
+ city:"Motorli vagon va tirkama juftligi bir haydovchi bilan sig'imni ikki baravar oshirardi, bu 1960-yillar Toshkentining tez o'sishiga javob edi.",
+ note:"Uzunlik va rang <b>taxmin</b>."},
+{id:"lm57",s:"LM-57",era:2,y:"1964",name:"LM-57",maker:"Leningrad, VARZ",years:"1964-yil oktyabridan",count:"aniq emas",gauge:"1524 mm",w:"2,55",h:"3,08",L:15.0,
+ story:["Leningradda ishlab chiqarilgan to'rt o'qli vagon, TransPhoto'da 15 ta surati bor."],
+ city:"15 metrli bir vagon avvalgi juftliklar sig'imiga yaqin keldi: kam vagon bilan ko'p yo'lovchi.",
+ note:"O'lcham en.wikipedia LM-57: 15 000 × 2 550 × 3 080 mm. Krem-yashil rang <b>taxmin</b>."},
+{id:"rvz6",s:"RVZ-6M",era:2,y:"1965",name:"RVZ-6M",maker:"Riga vagon zavodi",years:"RVZ-6 1965-yil oxiridan, RVZ-6M 1974-yildan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI (pantograf ko'tarilgan)",L:15.0,Lt:true,
+ story:["Rigada yasalgan vagonlar 1965-yil oxiridan kela boshladi va 1966-yilgi zilziladan keyin qayta qurilayotgan shaharda yurdi. Model keyingi RVZ-6M modifikatsiyasi bo'yicha. Muzey vagoni 2-depoda saqlangan."],
+ city:"Qayta qurilayotgan shaharda yangi mikrorayonlarni markaz bilan bog'lagan asosiy vagonlardan biri.",
+ note:"Suratlar oq-qora: pastki qism qizil deb olindi, <b>taxmin</b>. Uzunlik ~15 m, <b>taxmin</b>."},
+{id:"lm68",s:"LM-68",era:2,y:"1970",name:"LM-68",maker:"Leningrad",years:"1970-yildan",count:"aniq emas",gauge:"1524 mm",w:"2,6",h:"AI",L:15.0,Lt:true,
+ story:["LM-57 ning keyingi avlodi, TransPhoto'da 9 ta surat."],
+ city:"1970-yillarda tramvay hali metro bilan raqobatlashmagan: Toshkent metrosi 1977-yilda ochildi va tramvay uning atrofidagi tarmoqni to'ldirdi.",
+ note:"O'lcham va rang <b>taxmin</b>."},
+{id:"ktm5",s:"KTM-5",era:2,y:"1976",name:"KTM-5 (KTM-5M3)",maker:"UKVZ",years:"1976-yildan",count:"dastlab 12 ta",gauge:"1524 mm",w:"2,6",h:"AI (~3,8)",L:15.0,Lt:true,
+ story:["Sovet Ittifoqidagi eng ommaviy tramvaylardan biri. 1989-yilda Toshkent parkidagi 511 vagonning asosini KTM-5M3, RVZ-6 va Tatra T3 tashkil qilgan."],
+ city:"«Oltin davr»: tramvay shahar bo'ylab zich tarmoq bo'lib, kundalik harakatning katta qismini ko'tarardi.",
+ note:"Tok olgich Blender'da qayta qurilgan. 1976-yilgi asl rang noma'lum; model keyingi ko'k-oq rangda."},
+{id:"t3su",s:"Tatra T3SU",era:2,y:"1983",name:"Tatra T3SU",maker:"ČKD Tatra (Chexoslovakiya)",years:"1983-yildan",count:"dastlab 10 ta",gauge:"1524 mm",w:"2,5",h:"3,05",L:14.0,
+ story:["Qizil-sariq Tatra Toshkent ko'chalarining eng taniqli obrazlaridan biri bo'ldi."],
+ city:"Ravon yurish va yaxshi tezlanish tramvayni ko'p tarmoqli shaharda raqobatbardosh saqlardi.",
+ note:"O'lcham en.wikipedia Tatra T3: kuzov 14 000 × 2 500 × 3 050 mm."},
+{id:"t6b5",s:"Tatra T6B5",era:3,y:"1993",name:"Tatra T6B5",maker:"ČKD Tatra",years:"1993–2000",count:"80 ta (Merzlov) yoki 90 ta (boshqa manba)",gauge:"1524 mm",w:"2,5",h:"3,145",L:15.3,
+ story:["Mustaqillikning birinchi yillarida kelgan katta partiya. Oq-yashil rangda yurgan."],
+ city:"Qiyin iqtisodiy yillarda ham tarmoq yangilandi: tramvay arzon ommaviy transport bo'lib qoldi.",
+ note:"O'lcham en.wikipedia Tatra T6B5: 15 300 × 2 500 × 3 145 mm. Soni bo'yicha manbalar farq qiladi."},
+{id:"ktm8",s:"KTM-8",era:3,y:"1993",name:"KTM-8 (71-608)",maker:"UKVZ",years:"1993–2000",count:"51 ta",gauge:"1524 mm",w:"2,5",h:"3,09",L:15.21,
+ story:["Havorang-oq rangdagi Ust-Katav vagoni, T6B5 bilan bir davrda kelgan."],
+ city:"Ikki xil vagon bir vaqtda parkni yangiladi, tarmoq 2000-yillarga shu park bilan kirdi.",
+ note:"O'lcham en.wikipedia 71-608: 15 210 mm, balandlik 3 090 mm."},
+{id:"ktm19",s:"KTM-19",era:3,y:"2007",name:"KTM-19 (71-619KT)",maker:"UKVZ",years:"2007–2008",count:"30 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.4,
+ story:["Yashil-oq rangdagi so'nggi yirik sovet tipidagi partiya. Oxirgi yillarda T6B5 bilan birga yurgan."],
+ city:"Yangi vagonlar kelgan bo'lsa-da, 2000-yillar oxirida tarmoq qisqara boshladi, liniyalar birin-ketin yopildi.",
+ note:"Uzunlik en.wikipedia 71-619: 15 400 mm."},
+{id:"vario",s:"Vario LF",era:3,y:"2011",name:"Vario LF",maker:"Pragoimex (Chexiya)",years:"2011–2012",count:"20 ta rejada, 14 tasi hujjatlashgan",gauge:"1524 mm",w:"2,5",h:"AI",L:15.1,Lt:true,
+ story:["Toshkentga kelgan past polli qismli zamonaviy tramvay. Keyin bir qismi Samarqandga o'tkazildi."],
+ city:"Past pol aravacha, keksa va nogironligi bor yo'lovchiga to'xtashda zinasiz chiqish imkonini beradi. Bu zamonaviy ochiq shahar transportining asosiy talabi.",
+ note:"Soni <b>tekshirilmoqda</b>. O'lcham <b>taxmin</b>."},
+{id:"spektr",s:"Spektr",era:3,y:"20xx",name:"Spektr (71-402)",maker:"UKVZ",years:"kelgan yili tekshirilmoqda",count:"1 + 1 ta",gauge:"1524 mm",w:"2,5",h:"AI",L:15.0,Lt:true,
+ story:["Toshkentga ikkita (71-402 va 71-403) keltirilgan. 2016-yilda Toshkent tramvayining oxirgi reysi bo'ldi."],
+ city:"Toshkent tramvayi 115 yil yashadi. Uning yo'qolishi bilan shahar yerusti relsli transportdan va unga bog'langan ko'chalar hayotidan ayrildi.",
+ note:"Kelgan yili va o'lcham <b>taxmin</b>."}
+];
+const MODELS={};
+const MAXL=15.4;
+const $=id=>document.getElementById(id);
+const mv=$("mv"),stage=$("stage"),track=$("track");
+let cur=0;
+
+let lastEra=0;
+V.forEach((v,i)=>{
+  const b=document.createElement("button");
+  b.className="stop";b.style.setProperty("--c",ERAS[v.era].c);
+  b.innerHTML=`<span class="y">${v.y}</span><span class="dot"></span><span class="n">${v.s}</span>`;
+  b.setAttribute("aria-label",`${v.y}, ${v.name}`);
+  b.onclick=()=>show(i);
+  track.appendChild(b);
+  if(v.era!==lastEra){
+    const e=document.createElement("span");e.className="eraband";
+    e.textContent=ERAS[v.era].name;e.style.borderColor=ERAS[v.era].c;
+    track.appendChild(e);
+    requestAnimationFrame(()=>{e.style.left=b.offsetLeft+"px"});
+    lastEra=v.era;
+  }
+});
+const stops=[...track.querySelectorAll(".stop")];
+
+function show(i,fromHash){
+  cur=(i+V.length)%V.length;
+  const v=V[cur];
+  document.documentElement.style.setProperty("--era",ERAS[v.era].c);
+  $("no").textContent=cur+1;
+  $("era").textContent=ERAS[v.era].name;
+  $("name").textContent=v.name;
+  $("maker").textContent=v.maker;
+  $("f-years").textContent=v.years;
+  $("f-count").textContent=v.count;
+  $("f-gauge").textContent=v.gauge;
+  $("f-wh").textContent=`${v.w} × ${v.h} m`;
+  $("lenbar").style.width=(v.L/MAXL*100)+"%";
+  $("lentext").textContent=`Uzunligi ${String(v.L).replace(".",",")} m${v.Lt?" (taxmin)":""}. Shkala: eng uzun vagon, 15,4 m.`;
+  $("story").innerHTML=v.story.map(p=>`<p>${p}</p>`).join("");
+  $("city").textContent=v.city;
+  $("note").innerHTML=v.note;
+  $("year").textContent=v.y;
+  for(const el of [$("name"),$("story"),$("year")]){el.classList.remove("swap");void el.offsetWidth;el.classList.add("swap")}
+  stops.forEach((s,k)=>s.setAttribute("aria-current",k===cur?"true":"false"));
+  const line=track.parentElement,st=stops[cur];
+  line.scrollTo({left:st.offsetLeft-line.clientWidth/2+st.offsetWidth/2,behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"});
+  document.querySelector(".info").scrollTop=0;
+  stage.classList.remove("nomodel");
+  mv.src=MODELS[v.id]||`models/${v.id}.glb`;
+  mv.cameraOrbit="35deg 74deg 110%";
+  // keyingi modelni oldindan yuklab qo'yish
+  const nx=V[(cur+1)%V.length];try{fetch(MODELS[nx.id]||`models/${nx.id}.glb`).catch(()=>{})}catch(e){}
+  if(!fromHash){try{history.replaceState(null,"","#"+v.id.replace(/_/g,"-"))}catch(e){}}
+}
+mv.addEventListener("error",()=>stage.classList.add("nomodel"));
+$("prev").onclick=()=>show(cur-1);
+$("next").onclick=()=>show(cur+1);
+addEventListener("keydown",e=>{
+  if(e.target.closest&&e.target.closest("model-viewer"))return;
+  if(e.key==="ArrowRight")show(cur+1);
+  if(e.key==="ArrowLeft")show(cur-1);
+});
+let sx=null;
+stage.addEventListener("touchstart",e=>{if(e.touches.length===1&&e.target===stage)sx=e.touches[0].clientX},{passive:true});
+stage.addEventListener("touchend",e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(d)>60)show(cur+(d<0?1:-1))});
+
+function fromHash(){
+  const h=location.hash.slice(1).replace(/-/g,"_");
+  const k=V.findIndex(v=>v.id===h);
+  show(k>=0?k:0,true);
+}
+addEventListener("hashchange",fromHash);
+fromHash();
+</script>
+</body>
+</html>
