@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toshkent tramvayi: 22 tur vagon, 1901–2016</title>
+<title>Toshkent tramvayi: 19 tur vagon, 1901–2016</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Onest:wght@400;500;700&display=swap" rel="stylesheet">
@@ -113,7 +113,7 @@ footer ul{margin:.5em 0 0;padding-left:1.2em}
 </head>
 <body>
 <header>
-  <h1>Toshkent tramvayi: 22 tur vagon, 1901–2016</h1>
+  <h1>Toshkent tramvayi: 19 tur vagon, 1901–2016</h1>
   <p>Archemistry Urban</p>
 </header>
 
@@ -191,33 +191,21 @@ const V=[
  story:["1903-yilgi Romanovskiy ko'chasidagi suratda tomida yo'lovchilar o'tiradigan ikki qavatli konka ko'rinadi. Merzlov 1903-yilgi liniyada 1- va 2-klass vagonlar bo'lganini yozadi."],
  city:"Tom ustidagi o'rindiqlar bitta ot tortadigan vagonga ko'proq odam sig'dirishning arzon yo'li edi. Klasslarga bo'linish esa shahar ijtimoiy tabaqalanishining transportdagi aksi.",
  note:"Suratlar xira: zina shakli, tomdagi skameyka va derazalar soni <b>taxmin</b>."},
-{id:"ragheno_motor",s:"Ragheno",era:1,y:"1912",name:"«Belgiya tramvayi», motorli vagon",maker:"Usines Ragheno, Mexelen (Belgiya), 1911",years:"1912–1920-yillar",count:"80 ta buyurtma; 1916-yilda 50 motorli",gauge:TOR,w:"1,89",h:"3,2",L:8.3,
- story:["1912-yilda Toshkentda elektr tramvay ishga tushdi. Vagonlar Belgiyaning Ragheno zavodidan keltirildi, model 1911-yilgi zavod chizmasi va TransPhoto suratlari asosida tiklandi.","Muzeydagi «Belgiya tramvayi» keyin yasalgan nusxa, original vagonning o'lchamlari undan olinmaydi."],
- city:"Elektr tortish otni almashtirdi: tezlik oshdi, liniyalar uzaydi, shahar chegarasi piyoda masofadan tashqariga chiqa boshladi. Toshkentning yangi va eski qismlari orasidagi bog'liqlik kundalik holga aylandi.",
- note:"O'lcham 1911-yilgi zavod chizmasidan."},
-{id:"ragheno_tirkama",s:"Ragheno tirkama",era:1,y:"1912",name:"Belgiya davri tirkama vagoni",maker:"Ragheno (taxmin)",years:"1912–1933",count:"1916-yilda 25 ta, 1924-yilda 20 ta",gauge:TOR,w:"2,0",h:"2,87",L:8.3,Lt:true,
- story:["Motorsiz vagon motorli vagonga ulanib yurgan. Model «Сквер. Вагонъ трамвая» otkritkasi va №27 vagon tirkama bilan tushgan surat asosida tiklandi."],
- city:"Tirkama qo'shimcha motorsiz sig'im berdi: bitta haydovchi va bitta motor bilan ikki baravar yo'lovchi. Bu avjli soatlardagi oqimga arzon javob edi.",
- note:"Uzunlik motorli vagon bilan bir xil deb olindi, <b>taxmin</b>. Tirkama raqami manbada yo'q."},
-{id:"kh",s:"Kh",era:2,y:"1931",name:"Kh, motorli vagon",maker:"Putilov va Mitishchi zavodlari («Gomza» seriyasi)",years:"1931–1932-yildan",count:"park 150 vagonga yetgan",gauge:TOR,w:"2,19",h:"3,84 (shtanga bilan)",L:10.27,
- story:["Sovet sanoatlashtirish yillarida kelgan birinchi ommaviy seriya. Qizil-krem rangli surat saqlangan, model shu suratlar asosida.","TransPhoto'da Kh №76 vagoni 4-marshrutda, Dizelnaya ko'chasida tushgan."],
- city:"Yangi zavodlar va ishchi posyolkalari tramvay liniyalari bo'ylab o'sdi. Tramvay mehnat joyi va uyni bog'laydigan asosiy vositaga aylandi.",
- note:"Uzunlik en.wikipedia «Kh (tramcar)»: 10 270 mm. U yerdagi 2 464 mm kenglik keng iz uchun; model torroq."},
-{id:"m",s:"M tirkama",era:2,y:"1931",name:"M, tirkama vagon",maker:"Mitishchi zavodi («Gomza» seriyasi)",years:"1931–1932-yildan",count:"aniq emas",gauge:TOR,w:"AI",h:"AI",L:10.3,Lt:true,
- story:["Kh motorli vagoniga juft bo'lib yurgan tirkama. Model rangli Kh/M surati asosida."],
- city:"Kh + M juftligi 1930-yillardagi aholining keskin o'sishiga mos sig'im berdi.",
- note:"Uzunlik Kh bo'yicha, <b>taxmin</b>."},
+{id:"ragheno_motor",s:"Ragheno + tirkama",era:1,y:"1912",name:"Ragheno: motorli vagon + tirkama",maker:"Usines Ragheno, Mexelen (Belgiya), 1911. «Belgiya tramvayi»",years:"1912–1920-yillar (tirkamalar 1933-yilgacha)",count:"80 ta buyurtma; 1916-yilda 50 motorli va 25 tirkama",gauge:TOR,w:"1,89",h:"3,2",L:8.3,pair:true,
+ story:["1912-yilda Toshkentda elektr tramvay ishga tushdi. Vagonlar Belgiyaning Ragheno zavodidan keltirildi. Motorli vagonga motorsiz tirkama ulanib yurgan: bitta poyezd.","Motorli vagon 1911-yilgi zavod chizmasi va TransPhoto suratlari, tirkama esa «Сквер. Вагонъ трамвая» otkritkasi va №27 vagon tirkama bilan tushgan surat asosida tiklandi. Muzeydagi «Belgiya tramvayi» keyin yasalgan nusxa, original vagonning o'lchamlari undan olinmaydi."],
+ city:"Elektr tortish otni almashtirdi: tezlik oshdi, liniyalar uzaydi, shahar chegarasi piyoda masofadan tashqariga chiqa boshladi. Tirkama bitta haydovchi bilan sig'imni ikki baravar oshirdi.",
+ note:"Motorli vagon o'lchami 1911-yilgi zavod chizmasidan. Tirkama uzunligi motorli vagon bilan bir xil deb olindi, <b>taxmin</b>."},
+{id:"kh",s:"Kh + M",era:2,y:"1931",name:"Kh + M",maker:"Putilov va Mitishchi zavodlari («Gomza» seriyasi). Motorli vagon Kh va tirkama M",years:"1931–1932-yildan",count:"park 150 vagonga yetgan",gauge:TOR,w:"2,19",h:"3,84 (shtanga bilan)",L:10.27,pair:true,
+ story:["Sovet sanoatlashtirish yillarida kelgan birinchi ommaviy seriya. Motorli Kh vagoniga M tirkamasi ulanib yurgan. Qizil-krem rangli surat saqlangan, model shu suratlar asosida.","TransPhoto'da Kh №76 vagoni 4-marshrutda, Dizelnaya ko'chasida tushgan."],
+ city:"Yangi zavodlar va ishchi posyolkalari tramvay liniyalari bo'ylab o'sdi. Kh + M poyezdi 1930-yillardagi aholining keskin o'sishiga mos sig'im berdi.",
+ note:"Uzunlik en.wikipedia «Kh (tramcar)»: 10 270 mm. U yerdagi 2 464 mm kenglik keng iz uchun; model torroq. M tirkamasining uzunligi Kh bo'yicha, <b>taxmin</b>."},
 {id:"ktm1",s:"KTM-1",era:2,y:"1948",name:"KTM-1",maker:"UKVZ (Ust-Katav)",years:"1948-yildan",count:"1948-yilda 6 ta yangi KTM",gauge:"1524 mm (tekshirilmoqda)",w:"2,6",h:"3,06",L:13.5,Lt:true,
  story:["Urushdan keyingi birinchi to'rt o'qli vagon. Zavodda faqat 1524 mm iz uchun chiqarilgan, 1936-yildan Toshkentda keng iz bo'lgani uchun keng izda yurgan bo'lishi ehtimoli yuqori."],
  city:"1936-yildan uchinchi rels bilan keng izga o'tish boshlandi: shahar bir vaqtning o'zida ikki tizimni yuritdi, katta vagonlar uchun yo'l ochildi.",
  note:"Balandlik en.wikipedia KTM/KTP-1: 3 060 mm. Toshkentdagi izi manbada «?». Uzunlik va rang <b>taxmin</b>."},
-{id:"lowa_et54",s:"LOWA ET54",era:2,y:"195x",name:"LOWA ET54",maker:"LOWA (GDR)",years:"1950-yillar (tekshirilmoqda)",count:"TransPhoto'da 8 vagon",gauge:"tor (taxmin)",w:"2,2",h:"AI",L:10.8,Lt:true,
- story:["Sharqiy Germaniyadan kelgan ikki o'qli motorli vagon. Birinchi ro'yxatda yo'q edi, TransPhoto orqali topildi. Rangli surat qizil-krem rangni ko'rsatadi."],
- city:"Tor izli liniyalar hali ishlab turgan, ularni yangilash uchun GDR vagonlari olindi.",
- note:"Kelgan yili va izi <b>tekshirilmoqda</b>."},
-{id:"lowa_eb54",s:"LOWA EB54",era:2,y:"195x",name:"LOWA EB54, tirkama",maker:"LOWA (GDR)",years:"1950-yillar (tekshirilmoqda)",count:"TransPhoto'da 9 vagon",gauge:"tor (taxmin)",w:"2,2",h:"AI",L:10.8,Lt:true,
- story:["ET54 ga ulanadigan tirkama vagon."],
- city:"Motorli va tirkama juftligi tor izli tarmoqning so'nggi o'n yilligida ham asosiy sxema bo'lib qoldi.",
+{id:"lowa_et54",s:"LOWA ET54 + EB54",era:2,y:"195x",name:"LOWA ET54 + EB54",maker:"LOWA (GDR). Motorli vagon ET54 va tirkama EB54",years:"1950-yillar (tekshirilmoqda)",count:"TransPhoto'da 8 motorli va 9 tirkama vagon",gauge:"tor (taxmin)",w:"2,2",h:"AI",L:10.8,Lt:true,pair:true,
+ story:["Sharqiy Germaniyadan kelgan ikki o'qli vagonlar: motorli ET54 ga EB54 tirkamasi ulanib yurgan. Birinchi ro'yxatda yo'q edi, TransPhoto orqali topildi. Rangli surat qizil-krem rangni ko'rsatadi."],
+ city:"Tor izli liniyalar hali ishlab turgan, ularni yangilash uchun GDR vagonlari olindi. Motorli vagon va tirkama juftligi tor izli tarmoqning so'nggi o'n yilligida ham asosiy sxema bo'lib qoldi.",
  note:"Kelgan yili va izi <b>tekshirilmoqda</b>."},
 {id:"gotha_t57",s:"Gotha T57",era:2,y:"1956",name:"Gotha T57",maker:"Gotha (GDR)",years:"1956–1968",count:"1956-yilda 6 ta, 1958-yilda yana 6 ta",gauge:TOR,w:"2,2",h:"3,115",L:10.9,
  story:["Toshkent tor izli tarmog'ining eng so'nggi vagonlaridan biri. Faqat bitta oq-qora surat topilgan."],
