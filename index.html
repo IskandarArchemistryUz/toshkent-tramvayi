@@ -198,7 +198,7 @@ const V=[
 {id:"kh",s:"Kh + M",era:2,y:"1931",name:"Kh + M",maker:"Putilov va Mitishchi zavodlari («Gomza» seriyasi). Motorli vagon Kh va tirkama M",years:"1931–1932-yildan",count:"park 150 vagonga yetgan",gauge:TOR,w:"2,19",h:"3,84 (shtanga bilan)",L:10.27,pair:true,
  story:["Sovet sanoatlashtirish yillarida kelgan birinchi ommaviy seriya. Motorli Kh vagoniga M tirkamasi ulanib yurgan. Qizil-krem rangli surat saqlangan, model shu suratlar asosida.","TransPhoto'da Kh №76 vagoni 4-marshrutda, Dizelnaya ko'chasida tushgan."],
  city:"Yangi zavodlar va ishchi posyolkalari tramvay liniyalari bo'ylab o'sdi. Kh + M poyezdi 1930-yillardagi aholining keskin o'sishiga mos sig'im berdi.",
- note:"Uzunlik en.wikipedia «Kh (tramcar)»: 10 270 mm. U yerdagi 2 464 mm kenglik keng iz uchun; model torroq. M tirkamasining uzunligi Kh bo'yicha, <b>taxmin</b>."},
+ note:"O'lcham en.wikipedia «Kh (tramcar)»: uzunlik 10 270 mm, balandlik 3 274 mm. U yerdagi 2 464 mm kenglik keng iz uchun; model torroq. M tirkamasi Kh bilan bir xil kuzovda: uzunligi va tomi Kh bo'yicha olindi."},
 {id:"ktm1",s:"KTM-1",era:2,y:"1948",name:"KTM-1",maker:"UKVZ (Ust-Katav)",years:"1948-yildan",count:"1948-yilda 6 ta yangi KTM",gauge:"1524 mm (tekshirilmoqda)",w:"2,6",h:"3,06",L:13.5,Lt:true,
  story:["Urushdan keyingi birinchi to'rt o'qli vagon. Zavodda faqat 1524 mm iz uchun chiqarilgan, 1936-yildan Toshkentda keng iz bo'lgani uchun keng izda yurgan bo'lishi ehtimoli yuqori."],
  city:"1936-yildan uchinchi rels bilan keng izga o'tish boshlandi: shahar bir vaqtning o'zida ikki tizimni yuritdi, katta vagonlar uchun yo'l ochildi.",
@@ -297,7 +297,7 @@ function show(i,fromHash){
   $("f-gauge").textContent=v.gauge;
   $("f-wh").textContent=`${v.w} × ${v.h} m`;
   $("lenbar").style.width=(v.L/MAXL*100)+"%";
-  $("lentext").textContent=`${v.pair?"Har bir vagon uzunligi":"Uzunligi"} ${String(v.L).replace(".",",")} m${v.Lt?" (taxmin)":""}. Shkala: eng uzun vagon, 15,4 m.`;
+  $("lentext").textContent=`${v.pair?"Motorli vagon va tirkama kuzovi bir xil: har birining uzunligi":"Uzunligi"} ${String(v.L).replace(".",",")} m${v.Lt?" (taxmin)":""}. Shkala: eng uzun vagon, 15,4 m.`;
   $("story").innerHTML=v.story.map(p=>`<p>${p}</p>`).join("");
   $("city").textContent=v.city;
   $("note").innerHTML=v.note;
